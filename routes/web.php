@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['namespace' => 'Post'], function() {
+    Route::get('/posts', 'IndexController');
+});
+
+Route::get('/main', 'MainController')->name('main');
+
+
